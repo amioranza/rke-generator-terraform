@@ -1,0 +1,4 @@
+# This file was generated dinamically by rke-config-generator.sh
+# Please don't change it
+# If you need a new configuration look at jenkins how to create a new file.
+nodes:

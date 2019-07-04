@@ -1,0 +1,16 @@
+ignore_docker_version: true
+kubernetes_version: "v1.11.9-rancher1-1"
+system_images:
+  kubernetes: rancher/hyperkube:v1.11.9-rancher1
+services:
+  etcd:
+    snapshot: true
+    creation: 3h
+    retention: 24h
+  kubelet:
+    image: ""
+    extra_args:
+      volume-plugin-dir: /usr/libexec/kubernetes/kubelet-plugins/volume/exec
+      max-pods: "60"
+    extra_binds:
+      - "/usr/libexec/kubernetes/kubelet-plugins/volume/exec:/usr/libexec/kubernetes/kubelet-plugins/volume/exec"
